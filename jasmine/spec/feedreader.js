@@ -60,7 +60,7 @@ $(function() {
          */
         it('is hidden by default', function() {
           // .menu-hidden class of <body> should be present
-          expect($('<body class="menu-hidden"></body>')).not.toBeHidden();
+          expect(document.body.classList).toContain('menu-hidden');
         });
 
         /* Test that ensures the menu changes
@@ -69,15 +69,13 @@ $(function() {
         * clicked and does it hide when clicked again.
         */
           it('changes visibility when its icon is clicked', function() {
-
             var menuIcon = $('.menu-icon-link');
-            var hiddenClass = $('.menu-hidden');
             // click first time toggleClass
-            menuIcon.trigger('click');
-            expect($('<body class="menu-hidden"></body>')).not.toContain(hiddenClass);
+            menuIcon.click();
+            expect(document.body.classList).not.toContain('menu-hidden');
             // click second time toggleClass
-            menuIcon.trigger('click');
-            expect($('<body class="menu-hidden"></body>')).toContain(hiddenClass);
+            menuIcon.click();
+            expect(document.body.classList).toContain('menu-hidden');
 
           });
     });
