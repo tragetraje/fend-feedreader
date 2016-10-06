@@ -79,7 +79,8 @@ $(function() {
             loadFeed(0, done);
         });
         it('at least one feed entry displayed', function() {
-            expect($('.feed .entry')).toBeDefined();
+            //console.log($('.feed .entry').length);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
 
