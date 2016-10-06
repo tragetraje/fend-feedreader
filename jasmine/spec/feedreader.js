@@ -70,11 +70,9 @@ $(function() {
 
     // Test initial entries
     describe('Initial Entries', function() {
-        /* TODO: Write a test that ensures when the loadFeed
+        /* Test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function(done) {
              // pass done() as a callback function to loadFeed(id, cb);
@@ -85,11 +83,24 @@ $(function() {
          });
     });
 
-    // Test "New Feed Selection"
-
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
-
+    // Test new feed is loaded
+        describe('New Feed Selection', function() {
+          /* Test that ensures when a new feed is loaded
+           * by the loadFeed function that the content actually changes.
+           */
+           var feed1, feed2;
+           beforeEach(function(done) {
+               // wait until both feeds finish loading
+               loadFeed(0, function() {
+                    feed1 = $('.feed').html();
+                    loadFeed(1, function() {
+                        feed2 = $('.feed').html();
+                        done();
+                    });
+               });
+           });
+           it('feed content changes', function() {
+           expect(feed1).not.toEqual(feed2);
+         });
+        });
 }());
