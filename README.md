@@ -1,7 +1,7 @@
 
 ## Feed Reader Testing Project for Front-End Web Developer Nanodegree at Udacity
 
-In this project I was given a web-based application that reads RSS feeds from 4 popular blogs on Web Development and outputs them in the main window. There is also a menu which slides right and left when menu icon is clicked and lets the user choose one of four feeds.
+In this project I was given a web-based application that reads RSS feeds from four popular blogs on Web Development and outputs them in the main window. There is also a menu which slides right and left when menu icon is clicked and lets the user choose one of four feeds.
 
 My task was to implement a series of test sets using JavaScript Testing Framework [Jasmine](http://jasmine.github.io/) to check the application logic, event handling and DOM manipulation. I added my tests to `jasmine/spec/feedreader.js`.
 
