@@ -89,19 +89,28 @@ $(function() {
         /* Test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          */
-        var feed1, feed2;
-        beforeEach(function(done) {
-            // wait until both feeds finish loading
+
+        // beforeEach(function(done) {
+        //     // wait until both feeds finish loading
+        //     loadFeed(0, function() {
+        //         feed1 = $('.feed').html();
+        //         loadFeed(1, function() {
+        //             feed2 = $('.feed').html();
+        //             done();
+        //         });
+        //     });
+        // });
+        // get rid of beforeEach()
+        it('feed content changes', function(done) {
+            var feed1, feed2;
             loadFeed(0, function() {
                 feed1 = $('.feed').html();
                 loadFeed(1, function() {
                     feed2 = $('.feed').html();
+                    expect(feed1).not.toEqual(feed2);
                     done();
                 });
             });
-        });
-        it('feed content changes', function() {
-            expect(feed1).not.toEqual(feed2);
         });
     });
 }());
