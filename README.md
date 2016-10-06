@@ -7,7 +7,7 @@ My task was to implement a series of test sets using JavaScript Testing Framewor
 
 ## Running the Project
 
-1. Download compressed project folder or clone the repo git clone https://github.com/tragetraje/fend-feedreader.git
+1. Download compressed project folder or clone the repo git clone `https://github.com/tragetraje/fend-feedreader.git`
 2. Navigate to `index.html` on your local machine and open it in a web browser
 3. Head to the end of the page to see the results of running the Jasmine tests
 4. Navigate to `jasmine/spec/feedreader.js` to see the test suites I've written
